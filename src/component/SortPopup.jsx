@@ -44,17 +44,17 @@ function SortPopup(props) {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>{props.items[activeItem]}</span>
+                <span onClick={toggleVisiblePopup}>{props.items[activeItem].name}</span>
             </div>
             {//если visiblePopup true то отобрази этот див
                 visiblePopup && <div className="sort__popup">
                     <ul>
                         {
-                            props.items && props.items.map((name, index) =>
+                            props.items && props.items.map((sort, index) =>
                                 <li className={activeItem === index ? 'active' : ''}
                                     onClick={() => onSelectItem(index)}
-                                    key={name}>
-                                    {name}
+                                    key={sort.name}>
+                                    {sort.name}
                                 </li>
                             )
                         }

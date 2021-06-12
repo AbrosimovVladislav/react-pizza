@@ -1,12 +1,13 @@
 import React from "react";
-import Category from "../components/Category";
-import SortPopup from "../components/SortPopup";
-import Pizza from "../components/Pizza";
+import Category from "../component/Category";
+import SortPopup from "../component/SortPopup";
+import Pizza from "../component/Pizza";
+import store from "../redux/store";
 
 function Home(props) {
 
     const categoriesList = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
-    const sortList = ['популярности', 'цене', 'алфавиту'];
+    const sortList = [{name:'популярности', type:'popular'}, {name:'цене', type:'price'}, {name:'алфавиту',type: 'abc'}];
 
     return (
         <div className="container">
